@@ -29,9 +29,6 @@ require("nvim-tree").setup({
         signcolumn = "yes",
         mappings = {
           custom_only = false,
-          list = {
-            -- user mappings go here
-          },
         },
       },
       renderer = {
@@ -76,10 +73,10 @@ require("nvim-tree").setup({
               symlink_open = "",
             },
             git = {
-              unstaged = "✗",
-              staged = "✓",
+              unstaged = "",
+              staged = "",
               unmerged = "",
-              renamed = "➜",
+              renamed = " ",
               untracked = "★",
               deleted = "",
               ignored = "◌",
@@ -104,7 +101,7 @@ require("nvim-tree").setup({
         args = {},
       },
       diagnostics = {
-        enable = true,
+        enable = false,
         show_on_dirs = false,
         debounce_delay = 50,
         icons = {

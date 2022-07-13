@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["alpha-nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/alpha-nvim",
+    url = "git@github.com:goolord/alpha-nvim"
+  },
   ["asynctasks.vim"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/asynctasks.vim",
@@ -78,11 +83,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "git@github.com:neoclide/coc.nvim"
-  },
-  ["dashboard-nvim"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
-    url = "git@github.com:hardcoreplayers/dashboard-nvim"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -94,10 +94,10 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/fcitx.vim",
     url = "git@github.com:lilydjwg/fcitx.vim"
   },
-  indentLine = {
+  ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/indentLine",
-    url = "git@github.com:Yggdroot/indentLine"
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "git@github.com:lukas-reineke/indent-blankline.nvim"
   },
   neoformat = {
     loaded = true,
@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "git@github.com:nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "git@github.com:kyazdani42/nvim-web-devicons"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -133,6 +138,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/rainbow",
     url = "git@github.com:luochen1990/rainbow"
+  },
+  ripgrep = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/ripgrep",
+    url = "git@github.com:BurntSushi/ripgrep"
   },
   rnvimr = {
     loaded = true,
@@ -149,6 +159,21 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "git@github.com:lambdalisue/suda.vim"
   },
+  ["telescope-fzf-native.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/telescope-fzf-native.nvim",
+    url = "git@github.com:nvim-telescope/telescope-fzf-native.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "git@github.com:nvim-telescope/telescope.nvim"
+  },
+  ["tokyodark.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
+    url = "git@github.com:tiagovla/tokyodark.nvim"
+  },
   ["vim-airline"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-airline",
@@ -163,11 +188,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
     url = "git@github.com:vim-airline/vim-airline-themes"
-  },
-  ["vim-devicons"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-devicons",
-    url = "git@github.com:ryanoasis/vim-devicons"
   },
   ["vim-floaterm"] = {
     loaded = true,

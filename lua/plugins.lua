@@ -13,13 +13,12 @@ return require('packer').startup({
         use 'liuchengxu/vim-which-key'
         use 'voldikss/vim-floaterm'
         use 'tpope/vim-surround'
-        use {'neoclide/coc.nvim', branch = 'release'}
         use 'lambdalisue/suda.vim'
-        use 'ryanoasis/vim-devicons'
+		use 'kyazdani42/nvim-web-devicons'
         use 'RRethy/vim-illuminate'
         use 'terryma/vim-smooth-scroll'
         use 'liuchengxu/vista.vim'
-	use 'lukas-reineke/indent-blankline.nvim'
+		use 'lukas-reineke/indent-blankline.nvim'
         use 'honza/vim-snippets'
         use 'lilydjwg/fcitx.vim'
         use 'preservim/nerdcommenter'
@@ -28,14 +27,17 @@ return require('packer').startup({
         use 'skywind3000/asynctasks.vim'
         use 'liuchengxu/space-vim-dark'
         use 'sbdchd/neoformat'
-        use 'nvim-treesitter/nvim-treesitter'
+		use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use 'luochen1990/rainbow'
         use 'puremourning/vimspector'
-        use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
-	use 'kevinhwang91/rnvimr'
-	use 'kyazdani42/nvim-tree.lua'
-	use 'tiagovla/tokyodark.nvim'
-	use 'goolord/alpha-nvim'
+        use 'sindrets/diffview.nvim'
+		use 'kevinhwang91/rnvimr'
+		use 'kyazdani42/nvim-tree.lua'
+		use 'tiagovla/tokyodark.nvim'
+		use 'goolord/alpha-nvim'
+		use 'nvim-lua/plenary.nvim'
+		use 'nvim-telescope/telescope.nvim'
+		use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
     end,
     config = {
         ensure_dependencies = true,
