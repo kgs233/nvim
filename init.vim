@@ -1,35 +1,38 @@
 lua require('plugins')
+lua require('lsp/installer')
+lua require('lsp/settings')
+lua require('lsp/cmp')
+lua require('lsp/saga')
 lua require('Plug/treesitter')
 lua require('Plug/nvim-tree')
 lua require('Plug/telescope')
 lua require('interface/alpha')
 
 set encoding=utf-8
-filetype on
 
 set number
 set relativenumber
 set hidden
 set updatetime=100
-set smartindent
-set autoindent
 
-set smarttab
-set tabstop=4
-set splitright
-set splitbelow
+set ts=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
 
 let g:tokyodark_enable_italic_comment = 1
 let g:tokyodark_enable_italic = 1
 let g:tokyodark_color_gamma = "1.5"
 colorscheme tokyodark
 
+nnoremap <F1> :RnvimrToggle<CR>
+let g:rnvimr_enable_ex = 1
+
 inoremap <C-h> <left>
 inoremap <C-j> <down>
 inoremap <C-k> <up>
 inoremap <C-l> <right>
-
-inoremap { {<ENTER>}<UP><RIGHT><ENTER>
 
 inoremap jk <Esc>
 
@@ -77,23 +80,3 @@ let g:rainbow_conf = {
 
 let g:tagbar_width=30
 nnoremap <silent> <F4> :TagbarToggle<CR>
-
-
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-nnoremap <silent> K :call ShowDocumentation()<CR>

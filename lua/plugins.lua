@@ -33,11 +33,32 @@ return require('packer').startup({
         use 'sindrets/diffview.nvim'
 		use 'kevinhwang91/rnvimr'
 		use 'kyazdani42/nvim-tree.lua'
-		use 'tiagovla/tokyodark.nvim'
 		use 'goolord/alpha-nvim'
 		use 'nvim-lua/plenary.nvim'
 		use 'nvim-telescope/telescope.nvim'
 		use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+        use {
+            'tiagovla/tokyodark.nvim'
+        }
+        --lsp
+		use {
+            -- lsp config
+			"williamboman/nvim-lsp-installer",
+		    "neovim/nvim-lspconfig",
+            -- cmp
+            'hrsh7th/cmp-nvim-lsp',
+            'hrsh7th/cmp-buffer',
+            'hrsh7th/cmp-path',
+            'hrsh7th/nvim-cmp',
+            -- snippet engine
+            'hrsh7th/cmp-vsnip',
+            'hrsh7th/vim-vsnip',
+            'rafamadriz/friendly-snippets',
+            -- lsp kind
+            'onsails/lspkind-nvim',
+            -- lsp saga
+            'glepnir/lspsaga.nvim',
+		}
     end,
     config = {
         ensure_dependencies = true,

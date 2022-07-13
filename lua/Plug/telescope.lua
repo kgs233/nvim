@@ -9,6 +9,7 @@ require("telescope").setup {
 	},
     n = {
         ["<Esc>"] = actions.close,
+        ["q"] = actions.close,
       }
     },
     file_ignore_patterns = {"./node_modules"}

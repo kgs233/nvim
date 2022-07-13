@@ -79,10 +79,25 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/asynctasks.vim",
     url = "git@github.com:skywind3000/asynctasks.vim"
   },
-  ["coc.nvim"] = {
+  ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/coc.nvim",
-    url = "git@github.com:neoclide/coc.nvim"
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "git@github.com:hrsh7th/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "git@github.com:hrsh7th/cmp-nvim-lsp"
+  },
+  ["cmp-path"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/cmp-path",
+    url = "git@github.com:hrsh7th/cmp-path"
+  },
+  ["cmp-vsnip"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
+    url = "git@github.com:hrsh7th/cmp-vsnip"
   },
   ["diffview.nvim"] = {
     loaded = true,
@@ -94,10 +109,25 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/fcitx.vim",
     url = "git@github.com:lilydjwg/fcitx.vim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "git@github.com:rafamadriz/friendly-snippets"
+  },
   ["indent-blankline.nvim"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
     url = "git@github.com:lukas-reineke/indent-blankline.nvim"
+  },
+  ["lsp-colors.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lsp-colors.nvim",
+    url = "git@github.com:folke/lsp-colors.nvim"
+  },
+  ["lspkind-nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
+    url = "git@github.com:onsails/lspkind-nvim"
   },
   neoformat = {
     loaded = true,
@@ -108,6 +138,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nerdcommenter",
     url = "git@github.com:preservim/nerdcommenter"
+  },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "git@github.com:hrsh7th/nvim-cmp"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "git@github.com:williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "git@github.com:neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -139,11 +184,6 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/rainbow",
     url = "git@github.com:luochen1990/rainbow"
   },
-  ripgrep = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/ripgrep",
-    url = "git@github.com:BurntSushi/ripgrep"
-  },
   rnvimr = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/rnvimr",
@@ -168,11 +208,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "git@github.com:nvim-telescope/telescope.nvim"
-  },
-  ["tokyodark.nvim"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
-    url = "git@github.com:tiagovla/tokyodark.nvim"
   },
   ["vim-airline"] = {
     loaded = true,
@@ -223,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-surround",
     url = "git@github.com:tpope/vim-surround"
+  },
+  ["vim-vsnip"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-vsnip",
+    url = "git@github.com:hrsh7th/vim-vsnip"
   },
   ["vim-which-key"] = {
     loaded = true,
