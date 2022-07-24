@@ -1,8 +1,26 @@
+lua require('plugins')
+lua require('Plug/nvim-tree')
+lua require('interface/alpha')
+
 set encoding=utf-8
+filetype on
+
 set number
 set relativenumber
 set hidden
 set updatetime=100
+set smartindent
+set autoindent
+
+set smarttab
+set tabstop=4
+set splitright
+set splitbelow
+
+let g:tokyodark_enable_italic_comment = 1
+let g:tokyodark_enable_italic = 1
+let g:tokyodark_color_gamma = "1.5"
+colorscheme tokyodark
 
 inoremap <C-h> <left>
 inoremap <C-j> <down>
@@ -13,50 +31,24 @@ inoremap { {<ENTER>}<UP><RIGHT><ENTER>
 
 inoremap jk <Esc>
 
-call plug#begin('~/.vim/plugged')
-Plug 'Yggdroot/indentLine'
+noremap <F2> :NvimTreeToggle<CR>
+noremap <Esc> :NvimTreeClose<CR>
+
 let g:indent_guides_guide_size = 1 
 let g:indent_guides_start_level = 1 
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline_theme="bubblegum"
-"设置切换Buffer快捷键"
 noremap <C-TAB> :bn<CR>
 noremap <C-s-TAB> :bp<CR>
-" 关闭状态显示空白符号计数
 let g:airline#extensions#whitespace#enabled = 0
 let g:airline#extensions#whitespace#symbol = '!'
-" 设置consolas字体"前面已经设置过
-"set guifont=Consolas\ for\ Powerline\ FixedD:h11
 if !exists('g:airline_symbols')
  let g:airline_symbols = {}
 endif
 
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-" autocmd vimenter * NERDTree  "自动开启Nerdtree
-let g:NERDTreeWinSize = 25 "设定 NERDTree 视窗大小
-let NERDTreeShowBookmarks=1  " 开启Nerdtree时自动显示Bookmarks
-"打开vim时如果没有文件自动打开NERDTree
-" autocmd vimenter * if !argc()|NERDTree|endif
-"当NERDTree为剩下的唯一窗口时自动关闭
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" 设置树的显示图标
-let g:NERDTreeDirArrowExpandable = '+'
-let g:NERDTreeDirArrowCollapsible = '-'
-let NERDTreeIgnore = ['\.pyc$']  " 过滤所有.pyc文件不显示
-let g:NERDTreeShowLineNumbers=0 " 是否显示行号
-let g:NERDTreeHidden=0     "不显示隐藏文件
-""Making it prettier
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-nnoremap <F3> :NERDTreeToggle<CR> " 开启/关闭nerdtree快捷键
-
-Plug 'luochen1990/rainbow'
 let g:rainbow_active = 1
 let g:rainbow_conf = {
 \   'guifgs': ['darkorange3', 'seagreen3', 'royalblue3', 'firebrick'],
@@ -81,13 +73,10 @@ let g:rainbow_conf = {
 \   }
 \}
 
-Plug 'majutsushi/tagbar'
 let g:tagbar_width=30
 nnoremap <silent> <F4> :TagbarToggle<CR>
 
-Plug 'honza/vim-snippets'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ CheckBackspace() ? "\<TAB>" :
@@ -202,9 +191,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-Plug 'kevinhwang91/rnvimr'
 nnoremap <F1> :RnvimrToggle<CR>
 let g:rnvimr_enable_ex = 1
 let g:rnvimr_enable_picker = 1
-
-call plug#end()

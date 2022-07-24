@@ -1,4 +1,8 @@
-vim.cmd [[packadd packer.nvim]]
+vim.cmd [[packadd packer.nvim
+        augroup packer_user_config
+		autocmd!
+		autocmd BufWritePost plugins.lua source <afile> | PackerSync
+	augroup end]]
 
 return require('packer').startup({
     function()
@@ -11,12 +15,11 @@ return require('packer').startup({
         use 'tpope/vim-surround'
         use {'neoclide/coc.nvim', branch = 'release'}
         use 'lambdalisue/suda.vim'
-        use 'hardcoreplayers/dashboard-nvim'
         use 'ryanoasis/vim-devicons'
         use 'RRethy/vim-illuminate'
         use 'terryma/vim-smooth-scroll'
         use 'liuchengxu/vista.vim'
-        use 'Yggdroot/indentLine'
+	use 'lukas-reineke/indent-blankline.nvim'
         use 'honza/vim-snippets'
         use 'lilydjwg/fcitx.vim'
         use 'preservim/nerdcommenter'
@@ -29,6 +32,10 @@ return require('packer').startup({
         use 'luochen1990/rainbow'
         use 'puremourning/vimspector'
         use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
+	use 'kevinhwang91/rnvimr'
+	use 'kyazdani42/nvim-tree.lua'
+	use 'tiagovla/tokyodark.nvim'
+	use 'goolord/alpha-nvim'
     end,
     config = {
         ensure_dependencies = true,
@@ -58,7 +65,7 @@ return require('packer').startup({
             },
             depth = 1,
             clone_timeout = 60,
-            default_url_format = 'https://github.com/%s'
+            default_url_format = 'git@github.com:%s'
         },
         display = {
             non_interactive = false,
@@ -72,6 +79,9 @@ return require('packer').startup({
             header_sym = '━',
             show_all_info = true,
             prompt_border = 'double',
+	    open_fn = function()
+		    return require('packer.util').float { border = 'rounded' }
+            end,
             keybindings = {
                 quit = 'q',
                 toggle_info = '<CR>',
