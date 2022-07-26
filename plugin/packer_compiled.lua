@@ -129,6 +129,11 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "git@github.com:onsails/lspkind-nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
+    url = "git@github.com:glepnir/lspsaga.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/neoformat",
@@ -208,6 +213,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "git@github.com:nvim-telescope/telescope.nvim"
+  },
+  ["tokyodark.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
+    url = "git@github.com:tiagovla/tokyodark.nvim"
   },
   ["vim-airline"] = {
     loaded = true,

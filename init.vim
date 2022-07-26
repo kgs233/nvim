@@ -3,6 +3,7 @@ lua require('lsp/installer')
 lua require('lsp/settings')
 lua require('lsp/cmp')
 lua require('lsp/saga')
+lua require('lsp/colors')
 lua require('Plug/treesitter')
 lua require('Plug/nvim-tree')
 lua require('Plug/telescope')
@@ -20,6 +21,16 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
+
+"##### auto fcitx  ###########
+let g:input_toggle = 1
+function! Fcitx2en()
+   let s:input_status = system("fcitx5-remote")
+   if s:input_status == 2
+      let g:input_toggle = 1
+      let l:a = system("fcitx5-remote -c")
+   endif
+endfunction
 
 let g:tokyodark_enable_italic_comment = 1
 let g:tokyodark_enable_italic = 1

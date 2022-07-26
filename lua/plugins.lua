@@ -20,7 +20,6 @@ return require('packer').startup({
         use 'liuchengxu/vista.vim'
 		use 'lukas-reineke/indent-blankline.nvim'
         use 'honza/vim-snippets'
-        use 'lilydjwg/fcitx.vim'
         use 'preservim/nerdcommenter'
         use 'tpope/vim-fugitive'
         use 'airblade/vim-gitgutter'
@@ -54,10 +53,10 @@ return require('packer').startup({
             'hrsh7th/cmp-vsnip',
             'hrsh7th/vim-vsnip',
             'rafamadriz/friendly-snippets',
-            -- lsp kind
+            -- beautify
             'onsails/lspkind-nvim',
-            -- lsp saga
             'glepnir/lspsaga.nvim',
+            'folke/lsp-colors.nvim',
 		}
     end,
     config = {
