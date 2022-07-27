@@ -7,18 +7,19 @@ vim.cmd [[packadd packer.nvim
 return require('packer').startup({
     function()
         use 'wbthomason/packer.nvim'
-        use 'vim-airline/vim-airline'
-        use 'vim-airline/vim-airline-themes'
-        use 'enricobacis/vim-airline-clock'
+        use {
+            'nvim-lualine/lualine.nvim',
+            'kdheepak/tabline.nvim',
+            'kyazdani42/nvim-web-devicons',
+        }
         use 'liuchengxu/vim-which-key'
         use 'voldikss/vim-floaterm'
         use 'tpope/vim-surround'
         use 'lambdalisue/suda.vim'
-		use 'kyazdani42/nvim-web-devicons'
         use 'RRethy/vim-illuminate'
         use 'terryma/vim-smooth-scroll'
         use 'liuchengxu/vista.vim'
-		use 'lukas-reineke/indent-blankline.nvim'
+        use 'lukas-reineke/indent-blankline.nvim'
         use 'honza/vim-snippets'
         use 'preservim/nerdcommenter'
         use 'tpope/vim-fugitive'
@@ -26,24 +27,24 @@ return require('packer').startup({
         use 'skywind3000/asynctasks.vim'
         use 'liuchengxu/space-vim-dark'
         use 'sbdchd/neoformat'
-		use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use 'luochen1990/rainbow'
         use 'puremourning/vimspector'
         use 'sindrets/diffview.nvim'
-		use 'kevinhwang91/rnvimr'
-		use 'kyazdani42/nvim-tree.lua'
-		use 'goolord/alpha-nvim'
-		use 'nvim-lua/plenary.nvim'
-		use 'nvim-telescope/telescope.nvim'
-		use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+        use 'kevinhwang91/rnvimr'
+        use 'kyazdani42/nvim-tree.lua'
+        use 'goolord/alpha-nvim'
+        use 'nvim-lua/plenary.nvim'
+        use 'nvim-telescope/telescope.nvim'
+        use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
         use {
             'tiagovla/tokyodark.nvim'
         }
         --lsp
-		use {
+        use {
             -- lsp config
-			"williamboman/nvim-lsp-installer",
-		    "neovim/nvim-lspconfig",
+            "williamboman/nvim-lsp-installer",
+            "neovim/nvim-lspconfig",
             -- cmp
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -57,7 +58,7 @@ return require('packer').startup({
             'onsails/lspkind-nvim',
             'glepnir/lspsaga.nvim',
             'folke/lsp-colors.nvim',
-		}
+        }
     end,
     config = {
         ensure_dependencies = true,
@@ -101,8 +102,8 @@ return require('packer').startup({
             header_sym = '━',
             show_all_info = true,
             prompt_border = 'double',
-	    open_fn = function()
-		    return require('packer.util').float { border = 'rounded' }
+            open_fn = function()
+                return require('packer.util').float { border = 'rounded' }
             end,
             keybindings = {
                 quit = 'q',
