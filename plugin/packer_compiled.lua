@@ -104,11 +104,6 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "git@github.com:sindrets/diffview.nvim"
   },
-  ["fcitx.vim"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/fcitx.vim",
-    url = "git@github.com:lilydjwg/fcitx.vim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -254,20 +249,10 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "git@github.com:RRethy/vim-illuminate"
   },
-  ["vim-smooth-scroll"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-smooth-scroll",
-    url = "git@github.com:terryma/vim-smooth-scroll"
-  },
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-snippets",
     url = "git@github.com:honza/vim-snippets"
-  },
-  ["vim-surround"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-surround",
-    url = "git@github.com:tpope/vim-surround"
   },
   ["vim-vsnip"] = {
     loaded = true,
@@ -283,11 +268,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vimspector",
     url = "git@github.com:puremourning/vimspector"
-  },
-  ["vista.vim"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vista.vim",
-    url = "git@github.com:liuchengxu/vista.vim"
   }
 }
 

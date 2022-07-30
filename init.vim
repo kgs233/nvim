@@ -7,7 +7,6 @@ lua require('lsp/colors')
 lua require('Plug/treesitter')
 lua require('Plug/nvim-tree')
 lua require('Plug/telescope')
-lua require('Plug/lualine')
 lua require('interface/alpha')
 
 source ~/.config/nvim/keymap.vim
@@ -27,5 +26,3 @@ set expandtab
 set autoindent
 
 colorscheme tokyodark
-
-

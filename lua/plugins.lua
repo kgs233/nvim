@@ -1,24 +1,23 @@
 vim.cmd [[packadd packer.nvim
-        augroup packer_user_config
-		autocmd!
-		autocmd BufWritePost plugins.lua source <afile> | PackerSync
-	augroup end]]
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins.lua source <afile> | PackerSync
+augroup end]]
 
 return require('packer').startup({
     function()
         use 'wbthomason/packer.nvim'
         use {
-            'nvim-lualine/lualine.nvim',
-            'kdheepak/tabline.nvim',
+            'vim-airline/vim-airline',
+            'vim-airline/vim-airline-themes',
+            'enricobacis/vim-airline-clock',
             'kyazdani42/nvim-web-devicons',
         }
         use 'liuchengxu/vim-which-key'
         use 'voldikss/vim-floaterm'
-        use 'tpope/vim-surround'
         use 'lambdalisue/suda.vim'
         use 'RRethy/vim-illuminate'
-        use 'terryma/vim-smooth-scroll'
-        use 'liuchengxu/vista.vim'
+        use 'justinmk/vim-sneak'
         use 'lukas-reineke/indent-blankline.nvim'
         use 'honza/vim-snippets'
         use 'preservim/nerdcommenter'
