@@ -8,6 +8,9 @@ require("nvim-lsp-installer").setup({
             server_pending = "",
             server_uninstalled = " "
         }
-    }
+    },
+    github = {
+        download_url_template = "https://cdn.githubjs.cf/%s/releases/download/%s/%s",
+    },
 })
 
