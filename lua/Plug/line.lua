@@ -1,14 +1,15 @@
-require('lualine').setup{
-	options = { theme = 'onedark' }
+require("tabline").setup{
+	enable = false
 }
 
-require("tabline").setup{
+require('lualine').setup{
+	options = { theme = 'onedark' },
 	tabline = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = { require'tabline'.tabline_buffers },
-    lualine_x = { require'tabline'.tabline_tabs },
-    lualine_y = {},
-    lualine_z = {},
-  },
+		lualine_a = {},
+    	lualine_b = {},
+    	lualine_c = { require'tabline'.tabline_buffers },
+    	lualine_x = { require'tabline'.tabline_tabs },
+    	lualine_y = {},
+    	lualine_z = { "os.date('%H:%M:%S')" },
+	}
 }
