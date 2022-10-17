@@ -8,9 +8,8 @@ return require('packer').startup({
     function()
         use 'wbthomason/packer.nvim'
         use {
-            'vim-airline/vim-airline',
-            'vim-airline/vim-airline-themes',
-            'enricobacis/vim-airline-clock',
+			'nvim-lualine/lualine.nvim',
+			'kdheepak/tabline.nvim',
             'kyazdani42/nvim-web-devicons',
         }
         use 'liuchengxu/vim-which-key'
@@ -24,9 +23,7 @@ return require('packer').startup({
         use 'tpope/vim-fugitive'
         use 'airblade/vim-gitgutter'
         use 'skywind3000/asynctasks.vim'
-        use 'liuchengxu/space-vim-dark'
         use 'sbdchd/neoformat'
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
         use 'luochen1990/rainbow'
         use 'puremourning/vimspector'
         use 'sindrets/diffview.nvim'
@@ -36,14 +33,17 @@ return require('packer').startup({
         use 'nvim-lua/plenary.nvim'
         use 'nvim-telescope/telescope.nvim'
         use {"nvim-telescope/telescope-fzf-native.nvim", run = "make"}
+		use "gpanders/editorconfig.nvim"
         use {
-            'tiagovla/tokyodark.nvim'
+            --'tiagovla/tokyodark.nvim',
+			'olimorris/onedarkpro.nvim'
         }
         --lsp
         use {
             -- lsp config
-            "williamboman/nvim-lsp-installer",
             "neovim/nvim-lspconfig",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
             -- cmp
             'hrsh7th/cmp-nvim-lsp',
             'hrsh7th/cmp-buffer',
@@ -57,6 +57,9 @@ return require('packer').startup({
             'onsails/lspkind-nvim',
             'glepnir/lspsaga.nvim',
             'folke/lsp-colors.nvim',
+			--nvim-treesitter
+			{'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+			'p00f/nvim-ts-rainbow'
         }
     end,
     config = {

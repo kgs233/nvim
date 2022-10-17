@@ -9,23 +9,26 @@ vim.api.nvim_command('packadd packer.nvim')
 
 local no_errors, error_msg = pcall(function()
 
-  local time
-  local profile_info
-  local should_profile = false
-  if should_profile then
-    local hrtime = vim.loop.hrtime
-    profile_info = {}
-    time = function(chunk, start)
-      if start then
-        profile_info[chunk] = hrtime()
-      else
-        profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
-      end
+_G._packer = _G._packer or {}
+_G._packer.inside_compile = true
+
+local time
+local profile_info
+local should_profile = false
+if should_profile then
+  local hrtime = vim.loop.hrtime
+  profile_info = {}
+  time = function(chunk, start)
+    if start then
+      profile_info[chunk] = hrtime()
+    else
+      profile_info[chunk] = (hrtime() - profile_info[chunk]) / 1e6
     end
-  else
-    time = function(chunk, start) end
   end
-  
+else
+  time = function(chunk, start) end
+end
+
 local function save_profiles(threshold)
   local sorted_times = {}
   for chunk_name, time_taken in pairs(profile_info) do
@@ -38,8 +41,10 @@ local function save_profiles(threshold)
       results[i] = elem[1] .. ' took ' .. elem[2] .. 'ms'
     end
   end
+  if threshold then
+    table.insert(results, '(Only showing plugins that took longer than ' .. threshold .. ' ms ' .. 'to load)')
+  end
 
-  _G._packer = _G._packer or {}
   _G._packer.profile_output = results
 end
 
@@ -104,6 +109,11 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/diffview.nvim",
     url = "git@github.com:sindrets/diffview.nvim"
   },
+  ["editorconfig.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/editorconfig.nvim",
+    url = "git@github.com:gpanders/editorconfig.nvim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -129,6 +139,21 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
     url = "git@github.com:glepnir/lspsaga.nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "git@github.com:nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "git@github.com:williamboman/mason-lspconfig.nvim"
+  },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "git@github.com:williamboman/mason.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/neoformat",
@@ -143,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "git@github.com:hrsh7th/nvim-cmp"
-  },
-  ["nvim-lsp-installer"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
-    url = "git@github.com:williamboman/nvim-lsp-installer"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -164,10 +184,20 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "git@github.com:nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-ts-rainbow"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
+    url = "git@github.com:p00f/nvim-ts-rainbow"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "git@github.com:kyazdani42/nvim-web-devicons"
+  },
+  ["onedarkpro.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/onedarkpro.nvim",
+    url = "git@github.com:olimorris/onedarkpro.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -189,15 +219,15 @@ _G.packer_plugins = {
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/rnvimr",
     url = "git@github.com:kevinhwang91/rnvimr"
   },
-  ["space-vim-dark"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/space-vim-dark",
-    url = "git@github.com:liuchengxu/space-vim-dark"
-  },
   ["suda.vim"] = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/suda.vim",
     url = "git@github.com:lambdalisue/suda.vim"
+  },
+  ["tabline.nvim"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/tabline.nvim",
+    url = "git@github.com:kdheepak/tabline.nvim"
   },
   ["telescope-fzf-native.nvim"] = {
     loaded = true,
@@ -208,26 +238,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "git@github.com:nvim-telescope/telescope.nvim"
-  },
-  ["tokyodark.nvim"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/tokyodark.nvim",
-    url = "git@github.com:tiagovla/tokyodark.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-airline",
-    url = "git@github.com:vim-airline/vim-airline"
-  },
-  ["vim-airline-clock"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-airline-clock",
-    url = "git@github.com:enricobacis/vim-airline-clock"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-airline-themes",
-    url = "git@github.com:vim-airline/vim-airline-themes"
   },
   ["vim-floaterm"] = {
     loaded = true,
@@ -248,6 +258,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "git@github.com:RRethy/vim-illuminate"
+  },
+  ["vim-sneak"] = {
+    loaded = true,
+    path = "/home/kgs/.local/share/nvim/site/pack/packer/start/vim-sneak",
+    url = "git@github.com:justinmk/vim-sneak"
   },
   ["vim-snippets"] = {
     loaded = true,
@@ -272,6 +287,13 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+
+_G._packer.inside_compile = false
+if _G._packer.needs_bufread == true then
+  vim.cmd("doautocmd BufRead")
+end
+_G._packer.needs_bufread = false
+
 if should_profile then save_profiles(1) end
 
 end)

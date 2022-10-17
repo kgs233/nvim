@@ -1,18 +1,10 @@
+let mapleader = "\<space>"
+
 let g:tokyodark_enable_italic_comment = 1
 let g:tokyodark_enable_italic = 1
 let g:tokyodark_color_gamma = "1.5"
 
 let g:rnvimr_enable_ex = 1
-
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
-let g:airline_theme="bubblegum"
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#whitespace#symbol = '!'
-if !exists('g:airline_symbols')
- let g:airline_symbols = {}
-endif
 
 let g:indent_guides_guide_size = 1 
 let g:indent_guides_start_level = 1 
@@ -40,3 +32,13 @@ let g:rainbow_conf = {
                                 \       'css': 0,
                                 \   }
                                 \}
+
+let g:NERDCreateDefaultMappings = 1
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+let g:NERDToggleCheckAllLines = 1
